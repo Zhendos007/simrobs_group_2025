@@ -12,9 +12,9 @@ $$a \cdot \ddot{x} + b \cdot \dot{x} + c \cdot x = d$$
 with parameters
 $$
 \begin{cases}
-a = 4.62 \\
-b = -4.68 \\
-c = -5.74 \\
+a = 4.62 \\\\
+b = -4.68 \\\\
+c = -5.74 \\\\
 d = -7.95
 \end{cases}
 $$
@@ -27,7 +27,7 @@ $$ 4.62\lambda^2 - 4.68\lambda -5.74 = 0. $$
 Solving this quadratic gives two real roots (eigenvalues):
 $$
 \begin{cases}
-\lambda_1 = -0.717827 \\
+\lambda_1 = -0.717827 \\\\
 \lambda_2 = 1.73081
 \end{cases}
 $$
@@ -50,28 +50,28 @@ $$ x(t) = C_1 e^{-0.717827 t} + C_2 e^{1.73081 t} + 1.385. $$
 Given
 $$
 \begin{cases}
-x(0) = 0 \\
+x(0) = 0 \\\\
 \dot{x}(0) = 0
 \end{cases}
 $$
 we obtain the linear system
 $$
 \begin{cases}
-C_1 + C_2 + 1.385 = 0 \\
+C_1 + C_2 + 1.385 = 0 \\\\
 C_1 \lambda_1 + C_2 \lambda_2 = 0
 \end{cases}
 $$
 or equivalently
 $$
 \begin{cases}
-C_1 + C_2 = -1.385 \\
+C_1 + C_2 = -1.385 \\\\
 C_1 \cdot (-0.717827) + C_2 \cdot 1.73081 = 0
 \end{cases}
 $$
 Solving this system gives
 $$
 \begin{cases}
-C_1 = -0.978994 \\
+C_1 = -0.978994 \\\\
 C_2 = -0.406023
 \end{cases}
 $$
@@ -91,7 +91,7 @@ This completes the analytic solution: the transient behavior is given by the two
 We can represent the second-order ODE as a first-order system by defining the state vector
 $$
 \mathbf{X} = \begin{bmatrix}
-x \\
+x \\\\
 \dot{x}
 \end{bmatrix}
 $$
@@ -103,11 +103,11 @@ $$
 where
 $$
 A = \begin{bmatrix}
-0 & 1 \\
+0 & 1 \\\\
 \frac{-c}{a} & \frac{-b}{a}
 \end{bmatrix}, \quad
 B = \begin{bmatrix}
-0 \\
+0 \\\\
 \frac{d}{a}
 \end{bmatrix}
 $$
@@ -131,10 +131,10 @@ $$
 The Runge-Kutta 4th-order method (RK4) provides a more accurate solution by considering multiple slopes at each time step. The update equations are given by
 $$
 \begin{align*}
-f_1 &= f(x_k) \\
-f_2 &= f\left(x_k + \frac{h}{2} f_1\right) \\
-f_3 &= f\left(x_k + \frac{h}{2} f_2\right) \\
-f_4 &= f\left(x_k + h f_3\right) \\
+f_1 &= f(x_k) \\\\
+f_2 &= f\left(x_k + \frac{h}{2} f_1\right) \\\\
+f_3 &= f\left(x_k + \frac{h}{2} f_2\right) \\\\
+f_4 &= f\left(x_k + h f_3\right) \\\\
 x_{k+1} &= x_k + \frac{h}{6} \left( f_1 + 2f_2 + 2f_3 + f_4 \right)
 \end{align*}
 $$
@@ -157,3 +157,9 @@ The bigger the time step, the more pronounced the numerical artifacts, especiall
 ## Conclusion
 
 In this report, we have analyzed the numerical solutions of a second-order ordinary differential equation using various integration methods. The Forward Euler method, while simple, is prone to instability and inaccuracies for larger time steps. The Backward Euler method offers improved stability at the cost of increased computational complexity. Finally, the Runge-Kutta 4th-order method provides the best accuracy and stability across all tested time steps.
+
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });
+</script>
